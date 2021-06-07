@@ -1,8 +1,12 @@
 const authRouter = require('express').Router();
 
-const authenticationController = require('./controller/authenticationController');
+const {AuthenticationController} = require('./controller/authenticationController');
+
+const authenticationController = new AuthenticationController();
 
 const jwtVerification = require('./jwtVerification');
 
-authRouter.post('/', authenticationController.authen)
+authRouter.post('/', authenticationController.authenticate);
+
+module.exports = authRouter;
 
