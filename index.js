@@ -15,6 +15,8 @@ app.use(log);
 app.use('/api/login', authRouter);
 app.use('api/register', registrationRouter);
 
+// app.use('/api/resource', registrationRouter);
+
 
 app.listen(8080, () => {
     console.log('server is listening on port 8080');
