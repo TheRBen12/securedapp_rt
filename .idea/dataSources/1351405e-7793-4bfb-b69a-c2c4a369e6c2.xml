@@ -1057,20 +1057,33 @@ SELECT|fahrradverkauf.marke:null
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="317" parent="296" name="createdAt">
+    <column id="317" parent="296" name="roleId">
       <Position>6</Position>
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>int|0s</DataType>
     </column>
-    <column id="318" parent="296" name="updatedAt">
+    <column id="318" parent="296" name="createdAt">
       <Position>7</Position>
       <DataType>datetime|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="319" parent="296" name="PRIMARY">
+    <column id="319" parent="296" name="updatedAt">
+      <Position>8</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="320" parent="296" name="roleId">
+      <ColNames>roleId</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="321" parent="296" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
+    <foreign-key id="322" parent="296" name="users_ibfk_1">
+      <ColNames>roleId</ColNames>
+      <RefTableName>roles</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

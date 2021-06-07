@@ -6,8 +6,8 @@ const authRouter = require('./authentication')
 const registrationRouter = require('./registration')
 
 function log(request, response, next) {
-    console.log('request reached server from {}, received the following authentication headers {}',
-        request.url, request.headers['Authorization']);
+    console.log('request reaches server from', request.url, '\n', 'received the following authentication headers:',
+        request.headers['Authorization']);
     next();
 }
 

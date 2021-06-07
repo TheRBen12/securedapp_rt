@@ -12,15 +12,16 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      User.hasOne(models['Role'], {foreignKey: 'id'});
-      User.hasMany(models['Group'], {foreignKey: 'id'})
+      User.hasOne(models.Role, {foreignKey: 'roleId'});
+      User.hasMany(models.Group, {foreignKey: 'id'})
     }
   };
   User.init({
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,
-    password: DataTypes.STRING
+    password: DataTypes.STRING,
+    roleId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'User',
